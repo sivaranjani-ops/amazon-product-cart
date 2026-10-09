@@ -15,6 +15,9 @@ function App() {
   return (
     <div>
       <Header />
+      <div className="tab-title">
+  Tab title&nbsp;&nbsp; {`Wireless Mouse | ${selectedColor} | Cart: ${quantity}`}
+</div>
 
       {showProduct && (
         <ProductCard

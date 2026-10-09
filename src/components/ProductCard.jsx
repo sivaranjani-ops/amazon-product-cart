@@ -10,8 +10,7 @@ function ProductCard({
   useEffect(() => {
     const previousTitle = document.title;
 
-    document.title =
-      `${productName} | ${selectedColor} | Cart: ${quantity}`;
+    document.title = `${productName} | ${selectedColor} | Cart: ${quantity}`;
 
     return () => {
       document.title = previousTitle;
@@ -21,19 +20,36 @@ function ProductCard({
   const totalAmount = quantity * price;
 
   return (
-    <div>
-      <p>Product: {productName}</p>
-      <p>Price: ₹{price}</p>
-      <p>Colour: {selectedColor}</p>
-      <p>Deliver to: {deliveryCity}</p>
-      <p>Cart Quantity: {quantity}</p>
-      <p>Total Amount: ₹{totalAmount}</p>
-      <p>
-        Status:{" "}
-        {quantity === 0
-          ? "Cart is empty"
-          : "Product added to cart"}
-      </p>
+    <div className="product-card">
+      <img
+        className="product-image"
+        src="https://images.unsplash.com/photo-1527814050087-3793815479db?w=300"
+        alt="Wireless Mouse"
+      />
+
+      <div className="product-details">
+        <h2>{productName}</h2>
+
+        <div className="price">
+          ₹{price} <small>per item</small>
+        </div>
+
+        <div className="product-info">
+          Colour: {selectedColor}
+          <br />
+          Deliver to: {deliveryCity}
+        </div>
+
+        <div className="cart-info">
+          Cart Quantity: {quantity}
+          <br />
+          <strong>Total Amount: ₹{totalAmount}</strong>
+          <br />
+          {quantity === 0
+            ? "Cart is empty"
+            : "Product added to cart"}
+        </div>
+      </div>
     </div>
   );
 }
