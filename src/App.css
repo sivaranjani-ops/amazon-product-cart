@@ -1,0 +1,24 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 30px;
+}
+
+button {
+  margin: 10px 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+input,
+select {
+  padding: 8px;
+}
+
+footer {
+  margin-top: 30px;
+}
